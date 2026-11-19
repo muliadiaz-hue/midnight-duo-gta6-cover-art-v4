@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Midnight Duo — GTA 6-style cover maker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">★</span>
+    <div>
+      <h1>Midnight Duo</h1>
+      <p>GTA 6-style cover maker · Azura Bay</p>
+    </div>
+  </div>
+  <div class="top-actions">
+    <button id="undoBtn" type="button" title="Undo">↩ Undo</button>
+    <button id="redoBtn" type="button" title="Redo">↪ Redo</button>
+    <button id="exportBtn" type="button" class="primary">⬇ Export PNG</button>
+  </div>
+</header>
+
+<main class="workspace">
+  <section class="stage-wrap">
+    <canvas id="stage" width="1280" height="720"></canvas>
+    <p class="stage-hint">Drag a panel to pan its photo · scroll over a panel to zoom · click a panel to select it</p>
+  </section>
+
+  <aside class="panel">
+    <section class="group">
+      <h2>Photos</h2>
+      <div id="photoSlots" class="slots"></div>
+      <label class="upload">Upload your own photo for the selected panel
+        <input id="uploadInput" type="file" accept="image/*">
+      </label>
+      <p class="note">Photos are read on your machine and never uploaded.</p>
+    </section>
+
+    <section class="group">
+      <h2>Caption</h2>
+      <label>Title <input id="titleInput" type="text" value="MIDNIGHT DUO" maxlength="24"></label>
+      <label>City <input id="cityInput" type="text" value="AZURA BAY" maxlength="24"></label>
+      <label>Tagline <input id="taglineInput" type="text" value="TWO LEADS · ONE SCORE" maxlength="40"></label>
+      <label>Sash <input id="sashInput" type="text" value="ONE NIGHT ONLY" maxlength="24"></label>
+      <label class="check"><input id="sashToggle" type="checkbox" checked> Show sash</label>
+    </section>
+
+    <section class="group">
+      <h2>Layout</h2>
+      <div id="layoutBtns" class="btn-row"></div>
+    </section>
+
+    <section class="group">
+      <h2>Colour grade</h2>
+      <div id="gradeBtns" class="btn-row"></div>
+      <p class="note">Photographic leaves your photos untouched.</p>
+    </section>
+
+    <section class="group">
+      <h2>Export size</h2>
+      <div id="sizeBtns" class="btn-row"></div>
+      <label class="check"><input id="captionToggle" type="checkbox"> Panel captions (not in Band layout)</label>
+    </section>
+  </aside>
+</main>
+
+<footer class="foot">
+  <span>Midnight Duo · an original cover maker. No Rockstar artwork, logos or fonts.</span>
+  <span id="statusLine">Ready.</span>
+</footer>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
